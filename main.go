@@ -2,12 +2,15 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"time"
 )
 
 func main() {
 	// Create initial bytes array with 1KiB
+	scale := flag.Uint("scale", 4, "scale of duration difference between list growth to trigger the loop")
+	flag.Parse()
 	list := make([]byte, 1024)
 	dur := time.Second * 2
 	for {
@@ -20,7 +23,7 @@ func main() {
 		list = grow(list)
 		fmt.Printf("Growth to %v\n", len(list))
 		newDur := time.Since(start)
-		if newDur/dur > 4 {
+		if newDur/dur > time.Duration(*scale) {
 			// Most probably, we reached swap
 			break
 		}
