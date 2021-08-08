@@ -10,10 +10,11 @@ import (
 func main() {
 	// Create initial bytes array with 1KiB
 	scale := flag.Uint("scale", 4, "scale of duration difference between list growth to trigger the loop")
+	cicle := flag.Uint("cicle", 30, "how many times the data should be multiplied")
 	flag.Parse()
 	list := make([]byte, 1024)
 	dur := time.Second * 2
-	for {
+	for i := uint(0); i < *cicle; i++ {
 		// The first loop increase memory allocation until become much slower
 		start := time.Now()
 		for i := 0; i < 4; i++ {
