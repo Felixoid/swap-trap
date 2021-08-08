@@ -18,6 +18,8 @@ device_add pc-dimm,id=dimm1,memdev=mem1
 ## Results
 The swapped-out pages indeed stay in swap forever until the process died. They never swapped-in even they are under active read/write operations.
 
+Records in [recs](./recs) directory can be replayed with `asciinema play recs/$name` command.
+
 ### vm.swappiness=0
 [![asciicast](https://asciinema.org/a/429536.svg)](https://asciinema.org/a/429536)
 
