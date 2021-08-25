@@ -21,7 +21,7 @@ The swapped-out pages indeed stay in swap forever until the process died. They n
 Records in [recs](./recs) directory can be replayed with `asciinema play recs/$name` command.
 
 ### vm.swappiness=0
-[![asciicast](https://asciinema.org/a/429536.svg)](https://asciinema.org/a/429536)
+[![asciicast](https://asciinema.org/a/432367.svg)](https://asciinema.org/a/432367)
 
 ### vm.swappiness=60
 [![asciicast](https://asciinema.org/a/429497.svg)](https://asciinema.org/a/429497)
